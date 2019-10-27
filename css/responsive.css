@@ -1,0 +1,178 @@
+/* タブレット向けレイアウト */
+@media all and (max-width: 1086px) {
+.header-right{
+  display: none;
+}
+.menu-icon {
+  display:block;
+}
+.label{
+  font-size: 50%;
+}
+.price-table th:first-child {
+  width: 120px;
+}
+
+.container {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	#header >.container {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	#top-wrapper >.container {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+
+}
+
+
+/* モバイル向けレイアウト */
+@media all and (max-width: 767px) {
+.container {
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-top: 38px;
+}
+
+.header-right {
+  display: none;
+}
+.menu-icon {
+  display:block;
+}
+
+#top-wrapper h1 {
+  font-size: 2rem;
+}
+
+#top-wrapper h3{
+  font-size: 1.5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.label{
+  font-size: 50%;
+}
+
+.map{
+  font-size: 1.3rem;
+}
+
+/* News */
+	.news-items {
+		padding-top: 52px;
+	}
+
+	.news-meta {
+		align-items: center;
+		display: flex;
+		margin-bottom: 8px;
+		overflow: hidden;
+		position: static;
+	}
+
+	.news-tag {
+		float: right;
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.news-title {
+		padding-left: 0;
+	}
+/* News */
+
+
+/* price */
+#price > .container {
+  padding-bottom: 62px;
+}
+
+.price-content {
+  display: block;
+  padding-top: 52px;
+}
+
+.price-img {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.price-table {
+  width: 100%;
+}
+
+.price-table th:first-child {
+  width: 80px;
+}
+/* price */
+
+
+/* contact */
+#contact > .inner {
+  padding-bottom: 62px;
+}
+
+.contact-form {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.contact-label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding-top: 0;
+  width: 100%;
+}
+
+.contact-required {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.contact-input {
+  display: block;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.contact-input input {
+  height: 48px;
+  line-height: 48px;
+}
+
+.contact-input textarea {
+  height: 180px;
+}
+
+.contact-input select {
+  height: 48px;
+  line-height: 48px;
+}
+/* /contact */
+
+/* footer */
+.footer-logo {
+  margin-bottom: 58px;
+  width: 100%;
+}
+.footer-items{
+  width:100%;
+}
+.footer-sns{
+  width: 100%;
+}
+
+/* /footer */
+}

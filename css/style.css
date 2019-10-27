@@ -1,0 +1,792 @@
+/* common */
+/* box-sizing入れないとpaddingが外にはみ出てしまう */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	font-family:"Lato", "Noto Sans JP", "游ゴシック体", yugothic, "游ゴシック", "Yu Gothic", "メイリオ", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+	/* font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;	 */
+    /* フォントサイズのサイズ・太さ・ラインの高さは共通 */
+    font-size: 16px;
+	font-weight: 500;
+    line-height: 1.6;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+a{
+    text-decoration: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol{
+    list-style: none;
+}
+
+table {
+	border: 1px solid #eee;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1086px; /* コンテナの幅≒サイトの実質的な幅 */
+    width: 100%; /*小さくした時にはみ出さないように*/
+    padding: 20px 0;
+}
+
+.inner {
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 80px 0;
+	padding-top: 68px;
+	width: 1083px;
+}
+
+.heading {
+  font-size: 60px;
+  font-weight: 700;
+  padding-bottom: 36px;
+  position: relative;
+  text-align: center;
+}
+
+.heading::after {
+  -webkit-transform: translate(-50%);
+  background: #3f51b5;
+  bottom: 0;
+  content: "";
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  width: 76px;
+}
+
+/* 何ども使うパースは共通に */
+.section-dark {
+    background-color: #EFEFEF;
+}
+/* /common */
+
+
+/* header */
+#header{
+    /* min-height: にしないとスマホでメニュー展開した時に崩れる */
+    min-height: 50px;
+    width: 100%;
+    background-color: #3F51B5;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar{
+    min-height: 50px;
+    background-color: #3F51B5;
+}
+
+.nav-item > a {
+	border-bottom: 3px solid transparent;
+	color: #fff;
+	display: block;
+	padding-bottom: 4px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	/* transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s; */
+}
+
+.nav-item > a.m_active {
+	border-bottom: 3px solid #e81919;
+}
+
+.nav-item > a:hover {
+	border-bottom: 3px solid #e81919;
+}
+
+/* .nav-item{
+    float:right;
+	display: block;
+}
+
+.nav-item:hover{
+    border-bottom: 2px solid red;
+} */
+
+.header-left{
+    float: left;
+}
+
+.logo{
+    height: 39px;
+    width: 200px;
+    margin-top: 31px;
+}
+
+.header-right{
+    float: right;
+}
+
+.header-right a{
+    line-height: 100px;
+    padding: 0px 30px;
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+    transition: all 0.5s;
+}
+.header-right a:hover{
+    border-bottom: solid 1px red;
+}
+.menu-icon{
+    color: white;
+}
+/* /header */
+
+
+/* top-wrapper */
+#top-wrapper{
+    background-image: url(../img/mainvisual.png);
+    background-size: cover;
+    /* background-position: を指定しないと左上から表示される。background-positionプロパティは、背景画像の表示開始位置を指定する */
+    background-position: center center;
+    margin:0 auto;
+    text-align: center;
+    color: #333333;
+    padding: 249px 0 138px 0;
+}
+#top-wrapper h1{
+    font-size: 64px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+#top-wrapper h3{
+    font-size: 38px;
+    margin: 0 0 82px 0;
+}
+
+.btn-wrapper{
+    text-align: center;
+}
+
+.btn{
+    display: inline-block;
+    border-radius: .9rem;
+    color: white;
+    transition:all .3s;
+}
+
+.btn:hover{
+    color: white;
+    opacity: 0.6;
+}
+
+.btn-custom{
+    background-color: #3F51B5;
+    font-size: 20px;
+    padding: 16px 60px;
+    color: white;
+}
+
+.inquiry{
+    background-color: #3F51B5;
+    font-size: 38px;
+    padding: 17px 81px;
+    color: white;
+}
+
+/* /top-wrapper */
+
+
+/* card */
+.col-md-4{
+    margin-top:20px;
+}
+.display-4{
+    color: #333333;
+    padding:68px 0 0px 0;
+    /* font-size:60px; */
+}
+.card-body{
+    color: #6F7579
+}
+
+/* /card */
+
+
+/* News */
+
+#news > .container {
+	padding-bottom: 48px;
+	max-width: 838px;
+}
+
+.news-items {
+	padding-top: 90px;
+}
+
+.news-item {
+	border-bottom: 1px solid #707070;
+	padding: 18px 0 16px;
+	position: relative;
+}
+
+.news-item:last-child {
+	border-bottom: none;
+}
+
+.news-meta {
+	font-size: 0;
+	left: 0;
+	position: absolute;
+	top: 16px;
+}
+
+.news-time {
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: middle;
+	width: 115px;
+}
+
+.news-tag {
+	display: inline-block;
+	margin-right: 30px;
+	vertical-align: middle;
+}
+
+.news-tag a {
+	background: #666;
+	border-radius: 6px;
+	color: #fff;
+	display: block;
+	font-size: 16px;
+	font-weight: 700;
+	min-width: 100px;
+	padding: 4px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.news-tag a:hover {
+	opacity: 0.6;
+}
+
+.news-tag.m_tag2 a {
+	background: #3f51b5;
+}
+
+.news-tag.m_tag3 a {
+	background: #e81919;
+}
+
+.news-title {
+	line-height: 1.625;
+	padding-left: 245px;
+}
+
+.news-title a {
+	color: #333;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.news-title a:hover {
+	opacity: 0.6;
+}
+
+.news-archive-link {
+	margin-top: 26px;
+	text-align: center;
+}
+
+.news-archive-link a {
+	color: #e81919;
+	font-size: 16px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.news-archive-link a:hover {
+	opacity: 0.6;
+}
+
+.news-archive-link a::after {
+	background: transparent url(https://haniwaman.com/wp-content/uploads/2019/02/news-arrow.svg) no-repeat top center/cover;
+	content: "";
+	display: inline-block;
+	height: 8px;
+	margin-left: 6px;
+	vertical-align: middle;
+	width: 4px;
+}
+
+/* /News */
+
+
+/* price */
+#price > .container {
+	padding-bottom: 102px;
+}
+
+.price-content {
+	display: flex;
+	padding-top: 80px;
+}
+
+.price-img {
+	margin-right: auto;
+	text-align: center;
+	width: 33.24%;
+}
+
+.price-table {
+	width: 55.58%;
+}
+
+.price-table table,
+.price-table th,
+.price-table td {
+	background: #fff;
+	border: 1px solid #707070;
+	vertical-align: middle;
+}
+
+.price-table th {
+	background: #999;
+	color: #fff;
+	padding: 13px;
+	text-align: center;
+}
+/* ;first-childは最初に現れる子要素にスタイルを適用する */
+.price-table th:first-child {
+	width: 160px;
+}
+
+.price-table td {
+	color: #333;
+	padding: 13px;
+	text-align: right;
+}
+
+.price-table td .m_em {
+	color: #e81919;
+}
+
+.price-table td .m_attend {
+	font-size: 14px;
+}
+
+.price-attention {
+	padding-top: 20px;
+}
+
+.price-attention a {
+        transition: all .5s;
+}
+
+.price-attention a:hover {
+    opacity: 0.6;
+    color: red;
+}
+
+/* /price */
+
+
+/* access */
+#access > .container {
+	width: 100%;
+	padding-bottom: 88px;
+	max-width: 800px;
+}
+
+/* 
+.access-map {
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
+} */
+
+/* 
+.access-map iframe {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+} */
+
+.access-map {
+	margin: 104px auto 40px;
+	padding-top: 50%;
+	position: relative;
+	width: 100%;
+}
+
+.access-map iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+/* 
+.bottom_text{
+    padding:30px 20px;
+    color: #333333;
+    font-weight: lighter;
+} */
+
+.access-info {
+	font-size: 0;
+	margin: 14px 0;
+}
+
+.access-info dt {
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: middle;
+	width: 120px;
+}
+
+.access-info dd {
+	display: inline-block;
+	font-size: 16px;
+	vertical-align: middle;
+	width: calc(100% - 120px);
+}
+/* /access */
+
+
+/* contact */
+#contact{
+    padding-bottom: 88px;
+}
+.contact-form{
+    background-color: white;
+    width: 80%;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+#contact > .inner {
+	max-width: 100%;
+	padding-bottom: 122px;
+	width: 800px;
+}
+
+.contact-form {
+	background: #fff;
+	margin-top: 50px;
+	padding: 57px 43px 60px 52px;
+}
+
+.contact-dl {
+	font-size: 0;
+}
+
+.contact-label {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 50px;
+	padding-top: 24px;
+	vertical-align: top;
+	width: 177px;
+}
+
+.contact-required {
+	background: #e81919;
+	border-radius: 12px;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	height: 22px;
+	line-height: 22px;
+	margin-top: 6px;
+	text-align: center;
+	width: 46px;
+}
+
+.contact-input {
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 50px;
+	vertical-align: top;
+	width: calc(100% - 177px);
+}
+
+.contact-input input,
+.contact-input textarea {
+	border: 1px solid #707070;
+	width: 100%;
+}
+
+.contact-input input {
+	height: 60px;
+	line-height: 60px;
+	padding: 0 16px;
+}
+
+.contact-input textarea {
+	height: 240px;
+	padding: 10px 16px;
+}
+
+.contact-input select {
+	background: transparent url(https://haniwaman.com/wp-content/uploads/2019/02/select-arrow.svg) no-repeat center right 17px/24px 16px;
+	border: 1px solid #707070;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 16px;
+	width: 100%;
+}
+
+.contact-radio {
+	margin-bottom: 44px;
+}
+
+.contact-radio label {
+	display: inline-block;
+	margin-bottom: 24px;
+}
+
+.contact-radio input[type="radio"] {
+	display: none;
+}
+
+.contact-radio input[type="radio"] + span {
+	margin-left: 0;
+	margin-right: 30px;
+	padding: 0 0 0 40px;
+}
+
+.contact-radio input[type="radio"] + span::before {
+	height: 30px;
+	width: 30px;
+}
+
+.contact-radio input[type="radio"]:checked + span::after {
+	height: 18px;
+	left: 6px;
+	width: 18px;
+}
+
+.contact-agreement {
+	text-align: center;
+}
+
+.contact-agreement input[type="checkbox"] + span {
+	margin: 0;
+	padding-left: 50px;
+}
+
+.contact-agreement input[type="checkbox"] + span::before {
+	border-radius: 0;
+	height: 30px;
+	width: 30px;
+}
+
+.contact-agreement input[type="checkbox"]:checked + span::after {
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	height: 16px;
+	left: 3px;
+	width: 24px;
+}
+
+.contact-agreement a:hover {
+	opacity: 0.6;
+}
+
+.contact-send {
+	margin-top: 25px;
+	text-align: center;
+}
+
+.contact-send input[type="submit"] {
+	-webkit-appearance: none;
+	background: #3f51b5 url(https://haniwaman.com/wp-content/uploads/2019/02/contact-arrow.svg) no-repeat center right 14px/13px 20px;
+	border-radius: 12px;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 700;
+	height: 56px;
+	line-height: 56px;
+	max-width: 100%;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	transition: all .3s ease 0s;
+	width: 261px;
+}
+
+.contact-send input[type="submit"]:hover {
+	opacity: 0.6;
+}
+/* /contact */
+
+
+/* footer*/
+#footer{
+    background: linear-gradient(#666666, #333333) fixed;
+    color: #fff;
+    padding-top: 70px;
+    position: relative;
+}
+
+.footer-items li{
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-right: 30px;
+}
+
+#footer a{
+    color: #fff 
+}
+
+.footer-logo {
+	width: 30%;
+}
+
+.footer-logo-img {
+	margin-bottom: 30px;
+}
+
+.footer-logo-img a:hover {
+	opacity: 0.6;
+}
+
+.footer-logo-img img {
+	width: 200px;
+}
+
+.footer-info{
+    margin-top: 13px;
+}
+
+.footer-info dt{
+    display: inline-block;
+    /* dt,ddを両方インラインブロックにして横並び */
+}
+
+.footer-info dd{
+    display: inline-block;
+}
+
+.footer-items{
+    text-align: center;
+    width:100%;
+}
+
+.footer-sns li{
+    display: inline-block;
+    margin-right: 16px;    
+}
+
+.footer-copyright{
+    margin-top: 70px;
+}
+
+#totop {
+    bottom: 10px;
+    /* 親要素のFooterを基準にした絶対位置 */
+	position: absolute;
+	right: 10px;
+}
+
+#totop a img {
+	width: 60px;
+}
+
+#totop a:hover {
+	opacity: 0.6;
+}
+/* /footer */
